@@ -13,25 +13,34 @@ namespace GPIOWebAPI.Controllers
     public class GPIOController : ControllerBase
     {
 
-        // GET: api/Heating
+        // GET: api/GPIO
         [HttpGet]
         public GPIO[] Get()
         {
             return GPIOArray.gpioArray;
         }
 
-        // GET: api/Heating/5
-        [HttpGet("{id}", Name = "Get")]
+        // GET: api/GPIO/5
+        [HttpGet("{id}")]
         public GPIO Get(int id)
         {
             return GPIOArray.gpioArray[id - 1];
         }
 
-        // PUT: api/Heating/5
-        [HttpPut("{id}")]
-        public void Put(int id, int value)
+        // GET: api/GPIO/5/on
+        [HttpGet("{id}/on", Name = "GPIOGetOn")]
+        public GPIO GPIOGetOn(int id)
         {
-            GPIOArray.gpioArray[id - 1].Value = value;
+            GPIOArray.gpioArray[id - 1].Value = 1;
+            return GPIOArray.gpioArray[id - 1];
+        }
+
+        // GET: api/GPIO/5/off
+        [HttpGet("{id}/off", Name = "GPIOGetOff")]
+        public GPIO GPIOGetOff(int id)
+        {
+            GPIOArray.gpioArray[id - 1].Value = 0;
+            return GPIOArray.gpioArray[id - 1];
         }
 
     }
