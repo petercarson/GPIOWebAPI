@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Family Room</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="gpiocontrol.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Home Web</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class=""><a title="" class="" href="backyard.htm">Backyard</a></li>
+                        <li class=""><a title="" class="" href="basement.htm">Basement</a></li>
+                        <li class=""><a title="" class="" href="dining.htm">Dining Room</a></li>
+                        <li class=""><a title="" class="" href="family.htm">Family Room</a></li>
+                        <li class=""><a title="" class="" href="office.htm">Office</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+        </nav>
+
+        <h2>Heating</h2>
+        <p><button id="1" type="button" class="btn-gpio">Pump HW Tank</button></p>
+        <p><button id="2" type="button" class="btn-gpio">Pump Rads</button></p>
+        <p><button id="3" type="button" class="btn-gpio">Pump Floor Heat</button></p>
+        <p><button id="4" type="button" class="btn-gpio">Pump Ensuite Return</button></p>
+        <p><button id="5" type="button" class="btn-gpio">Solenoid Master Ensuite</button></p>
+        <p><button id="6" type="button" class="btn-gpio">Solenoid Basement Floor</button></p>
+        <p><button id="7" type="button" class="btn-gpio">Solenoid Kate Bedroom</button></p>
+        <p><button id="8" type="button" class="btn-gpio">Solenoid Kate Bathroom</button></p>
+        <p><button id="9" type="button" class="btn-gpio">Solenoid Media Room</button></p>
+        <p><button id="10" type="button" class="btn-gpio">Thermostat Master Ensuite</button></p>
+        <p><button id="11" type="button" class="btn-gpio">Thermostat Basement</button></p>
+    </div>
+
+</body>
+</html>
