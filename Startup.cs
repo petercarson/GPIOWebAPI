@@ -20,7 +20,6 @@ namespace GPIOWebAPI
             Configuration = configuration;
 
             GPIOArray.InitializeGPIO();
-            HeatingArray.InitializeHeating();
         }
 
         public IConfiguration Configuration { get; }

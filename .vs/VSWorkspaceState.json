@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Controllers",
+    "\\Models",
+    "\\Properties",
+    "\\web"
   ],
+  "SelectedNode": "\\GPIOWebAPI-Sprinkler.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -6,57 +6,41 @@ using System.Device.Gpio;
 
 namespace GPIOWebAPI
 {
-    internal static class GPIOArray
-    {
-        public const int PUMP_HW_TANK = 0;
-        public const int PUMP_RADS = 1;
-        public const int PUMP_FLOOR_HEAT = 2;
-        public const int PUMP_ENSUITE_RETURN = 3;
-        public const int THERMOSTAT_MASTER_ENSUITE = 4;
-        public const int THERMOSTAT_BASEMENT = 5;
-        public const int SOLENOID_MASTER_ENSUITE = 6;
-        public const int SOLENOID_KATE_BATHROOM = 7;
-        public const int SOLENOID_BASEMENT1 = 8;
-        public const int SOLENOID_BASEMENT2 = 9;
-        public const int SOLENOID_BASEMENT3 = 10;
-        public const int SOLENOID_BRETT_BATHROOM = 11;
-        public const int SOLENOID_KATE_RAD = 12;
-        public const int SOLENOID_MEDIA_ROOM_RAD = 13;
+  internal static class GPIOArray
+  {
+    private const int FRONT_YARD = 0;
+    private const int SIDE_YARD = 1;
+    private const int GRASS_STRIP = 2;
+    private const int BACKYARD_RIGHT = 3;
+    private const int BACKYARD_CENTRE = 4;
+    private const int BACK_GARDENS = 5;
 
     public static bool EMULATOR = false;
 
-        public static GPIO[] gpioArray;
+    public static GPIO[] gpioArray;
 
-        public static GpioController gpioController;
+    public static GpioController gpioController;
 
-        public static void InitializeGPIO()
+      public static void InitializeGPIO()
+      {
+        try
         {
-            try
-            {
-                gpioController = new GpioController();
-            }
-            catch
-            {
-                EMULATOR = true;
-            }
-
-            gpioArray = new GPIO[]
-                {
-                    new GPIO(PUMP_HW_TANK + 1, 13, "Pump HW Tank", PinMode.Output, 1),
-                    new GPIO(PUMP_RADS + 1, 21, "Pump Rads", PinMode.Output, 1),
-                    new GPIO(PUMP_FLOOR_HEAT + 1, 26, "Pump Floor Heat", PinMode.Output, 1),
-                    new GPIO(PUMP_ENSUITE_RETURN + 1, 27, "Pump Ensuite Return", PinMode.Output, 1),
-                    new GPIO(THERMOSTAT_MASTER_ENSUITE + 1, 24, "Thermostat Master Ensuite", PinMode.InputPullUp, 0),
-                    new GPIO(THERMOSTAT_BASEMENT + 1, 25, "Thermostat Basement", PinMode.InputPullUp, 0),
-                    new GPIO(SOLENOID_MASTER_ENSUITE + 1, 17, "Solenoid Master Ensuite", PinMode.Output, 1),
-                    new GPIO(SOLENOID_KATE_BATHROOM + 1, 18, "Solenoid Kate Bathroom", PinMode.Output, 1),
-                    new GPIO(SOLENOID_BASEMENT1 + 1, 10, "Solenoid Basement 1", PinMode.Output, 1),
-                    new GPIO(SOLENOID_BASEMENT2 + 1, 9, "Solenoid Basement 2", PinMode.Output, 1),
-                    new GPIO(SOLENOID_BASEMENT3 + 1, 11, "Solenoid Basement 3", PinMode.Output, 1),
-                    new GPIO(SOLENOID_BRETT_BATHROOM + 1, 7, "Solenoid Brett Bathroom", PinMode.Output, 1),
-                    new GPIO(SOLENOID_KATE_RAD + 1, 8, "Solenoid Kate Rad", PinMode.Output, 1),
-                    new GPIO(SOLENOID_MEDIA_ROOM_RAD + 1, 6, "Solenoid Media Room Rad", PinMode.Output, 1)
-                };
+          gpioController = new GpioController();
         }
-    }
+        catch
+        {
+          EMULATOR = true;
+        }
+
+        gpioArray = new GPIO[]
+        {
+          new GPIO(FRONT_YARD + 1, 7, "Front Yard", PinMode.Output, 1),
+          new GPIO(SIDE_YARD + 1, 2, "Side Yard", PinMode.Output, 1),
+          new GPIO(GRASS_STRIP + 1, 4, "Grass Strip", PinMode.Output, 1),
+          new GPIO(BACKYARD_RIGHT + 1, 5, "Backyard Right", PinMode.Output, 1),
+          new GPIO(BACKYARD_CENTRE + 1, 3, "Backyard Centre", PinMode.Output, 1),
+          new GPIO(BACK_GARDENS + 1, 6, "Back Gardens", PinMode.Output, 1)
+        };
+      }
+  }
 }
