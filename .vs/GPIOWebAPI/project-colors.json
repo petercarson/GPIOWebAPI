@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "7909054a-d98b-4a8d-afde-530356594a18": {
+      "ProjectGuid": "7909054a-d98b-4a8d-afde-530356594a18",
+      "DisplayName": "GPIOWebAPI",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
