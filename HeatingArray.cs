@@ -35,7 +35,7 @@ namespace GPIOWebAPI
       // Create a timer with a two second interval.
       heatingTimer = new System.Timers.Timer(2000);
       // Hook up the Elapsed event for the timer. 
-      //heatingTimer.Elapsed += OnTimedEvent;
+      heatingTimer.Elapsed += OnTimedEvent;
       heatingTimer.AutoReset = true;
       heatingTimer.Enabled = true;
       OnTimedEvent(null, null);
