@@ -29,16 +29,16 @@ namespace GPIOWebAPI
       new Heating(KATE_BEDROOM + 1, "Kate Bedroom", 24, 25, false),
       new Heating(KATE_BATHROOM + 1, "Kate Bathroom", 24, 25, false),
       new Heating(MEDIA_ROOM + 1, "Media Room", 24, 25, false),
-      new Heating(BASEMENT_BATHROOM + 1, "Basement Bathroom", 24, 22, false)
+      new Heating(BASEMENT_BATHROOM + 1, "Basement Bathroom", 24, 22, true)
         };
 
       // Create a timer with a two second interval.
       heatingTimer = new System.Timers.Timer(2000);
       // Hook up the Elapsed event for the timer. 
-      heatingTimer.Elapsed += OnTimedEvent;
+      //heatingTimer.Elapsed += OnTimedEvent;
       heatingTimer.AutoReset = true;
       heatingTimer.Enabled = true;
-      // OnTimedEvent(null, null);
+      OnTimedEvent(null, null);
     }
 
     private static void OnTimedEvent(Object source, ElapsedEventArgs e)
@@ -75,17 +75,34 @@ namespace GPIOWebAPI
           valuePumpHWTank = 0;
           valuePumpFloorHeat = 0;
           // Open the solenoid for the basement floor heat
-          GPIOArray.gpioArray[GPIOArray.SOLENOID_BASEMENT1].Value = 0;
-          GPIOArray.gpioArray[GPIOArray.SOLENOID_BASEMENT2].Value = 0;
-          GPIOArray.gpioArray[GPIOArray.SOLENOID_BASEMENT3].Value = 0;
+          GPIOArray.gpioArray[GPIOArray.SOLENOID_BASEMENT_OFFICE].Value = 0;
+          GPIOArray.gpioArray[GPIOArray.SOLENOID_BASEMENT_HALLWAY].Value = 0;
         }
         // No heat needed for the basement floor
         else
         {
           // Close the solenoid for the basement floor heat
-          GPIOArray.gpioArray[GPIOArray.SOLENOID_BASEMENT1].Value = 1;
-          GPIOArray.gpioArray[GPIOArray.SOLENOID_BASEMENT2].Value = 1;
-          GPIOArray.gpioArray[GPIOArray.SOLENOID_BASEMENT3].Value = 1;
+          GPIOArray.gpioArray[GPIOArray.SOLENOID_BASEMENT_OFFICE].Value = 1;
+          GPIOArray.gpioArray[GPIOArray.SOLENOID_BASEMENT_HALLWAY].Value = 1;
+        }
+      }
+
+      // Basement bathroom thermostat is calling for heat
+      if (heatingArray[HeatingArray.BASEMENT_BATHROOM].Enabled)
+      {
+        if (heatingArray[HeatingArray.BASEMENT_BATHROOM].CurrentTemperature < heatingArray[HeatingArray.BASEMENT_BATHROOM].SetTemperature)
+        {
+          // Basement floor needs the hot water tank and floor heat pumps
+          valuePumpHWTank = 0;
+          valuePumpFloorHeat = 0;
+          // Open the solenoid for the basement bathroom floor heat
+          GPIOArray.gpioArray[GPIOArray.SOLENOID_BASEMENT_BATHROOM].Value = 0;
+        }
+        // No heat needed for the basement bathroom floor
+        else
+        {
+          // Close the solenoid for the basement floor heat
+          GPIOArray.gpioArray[GPIOArray.SOLENOID_BASEMENT_BATHROOM].Value = 1;
         }
       }
 

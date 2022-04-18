@@ -16,9 +16,9 @@ namespace GPIOWebAPI
         public const int THERMOSTAT_BASEMENT = 5;
         public const int SOLENOID_MASTER_ENSUITE = 6;
         public const int SOLENOID_KATE_BATHROOM = 7;
-        public const int SOLENOID_BASEMENT1 = 8;
-        public const int SOLENOID_BASEMENT2 = 9;
-        public const int SOLENOID_BASEMENT3 = 10;
+        public const int SOLENOID_BASEMENT_BATHROOM = 8;
+        public const int SOLENOID_BASEMENT_OFFICE = 9;
+        public const int SOLENOID_BASEMENT_HALLWAY = 10;
         public const int SOLENOID_BRETT_BATHROOM = 11;
         public const int SOLENOID_KATE_RAD = 12;
         public const int SOLENOID_MEDIA_ROOM_RAD = 13;
@@ -50,9 +50,9 @@ namespace GPIOWebAPI
                     new GPIO(THERMOSTAT_BASEMENT + 1, 25, "Thermostat Basement", PinMode.InputPullUp, 0),
                     new GPIO(SOLENOID_MASTER_ENSUITE + 1, 17, "Solenoid Master Ensuite", PinMode.Output, 1),
                     new GPIO(SOLENOID_KATE_BATHROOM + 1, 18, "Solenoid Kate Bathroom", PinMode.Output, 1),
-                    new GPIO(SOLENOID_BASEMENT1 + 1, 10, "Solenoid Basement 1", PinMode.Output, 1),
-                    new GPIO(SOLENOID_BASEMENT2 + 1, 9, "Solenoid Basement 2", PinMode.Output, 1),
-                    new GPIO(SOLENOID_BASEMENT3 + 1, 11, "Solenoid Basement 3", PinMode.Output, 1),
+                    new GPIO(SOLENOID_BASEMENT_BATHROOM + 1, 10, "Solenoid Basement Bathroom", PinMode.Output, 1),
+                    new GPIO(SOLENOID_BASEMENT_OFFICE + 1, 9, "Solenoid Basement Office", PinMode.Output, 1),
+                    new GPIO(SOLENOID_BASEMENT_HALLWAY + 1, 11, "Solenoid Basement Hallway", PinMode.Output, 1),
                     new GPIO(SOLENOID_BRETT_BATHROOM + 1, 7, "Solenoid Brett Bathroom", PinMode.Output, 1),
                     new GPIO(SOLENOID_KATE_RAD + 1, 8, "Solenoid Kate Rad", PinMode.Output, 1),
                     new GPIO(SOLENOID_MEDIA_ROOM_RAD + 1, 6, "Solenoid Media Room Rad", PinMode.Output, 1)
