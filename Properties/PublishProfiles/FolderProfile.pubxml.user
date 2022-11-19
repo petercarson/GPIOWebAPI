@@ -6,6 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\pcarson\Source\Repos\GPIOWebAPI\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\pcarson\source\repos\GPIOWebAPI\publish\</_PublishTargetUrl>
+    <History>True|2022-11-19T03:07:19.6196358Z;False|2022-11-18T22:06:05.7390178-05:00;False|2022-11-18T22:04:32.9828937-05:00;False|2022-11-18T22:02:47.6140575-05:00;False|2022-11-18T22:01:39.8505337-05:00;</History>
   </PropertyGroup>
 </Project>

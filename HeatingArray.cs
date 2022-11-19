@@ -15,6 +15,7 @@ namespace GPIOWebAPI
     public const int KATE_BATHROOM = 3;
     public const int MEDIA_ROOM = 4;
     public const int BASEMENT_BATHROOM = 5;
+    public const int BRETT_BATHROOM = 6;
 
     public static Heating[] heatingArray;
     private static System.Timers.Timer heatingTimer;
@@ -29,7 +30,8 @@ namespace GPIOWebAPI
       new Heating(KATE_BEDROOM + 1, "Kate Bedroom", 24, 25, false),
       new Heating(KATE_BATHROOM + 1, "Kate Bathroom", 24, 25, false),
       new Heating(MEDIA_ROOM + 1, "Media Room", 24, 25, false),
-      new Heating(BASEMENT_BATHROOM + 1, "Basement Bathroom", 24, 22, true)
+      new Heating(BASEMENT_BATHROOM + 1, "Basement Bathroom", 24, 22, true),
+      new Heating(BRETT_BATHROOM + 1, "Brett Bathroom", 24, 25, true)
         };
 
       // Create a timer with a two second interval.
@@ -136,6 +138,22 @@ namespace GPIOWebAPI
       {
         // Close the solenoid for the Kate's bathroom
         GPIOArray.gpioArray[GPIOArray.SOLENOID_KATE_BATHROOM].Value = 1;
+      }
+
+      // Brett's bathroom is enabled
+      if (heatingArray[HeatingArray.BRETT_BATHROOM].Enabled)
+      {
+        // Open the solenoid for Kate's bathroom
+        GPIOArray.gpioArray[GPIOArray.SOLENOID_BRETT_BATHROOM].Value = 0;
+        // Floor needs the hot water tank and floor heat pumps
+        valuePumpHWTank = 0;
+        valuePumpFloorHeat = 0;
+      }
+      // No heat needed for Brett's bathroom
+      else
+      {
+        // Close the solenoid for the Brett's bathroom
+        GPIOArray.gpioArray[GPIOArray.SOLENOID_BRETT_BATHROOM].Value = 1;
       }
 
       // Media room rad is enabled
