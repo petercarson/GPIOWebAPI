@@ -58,14 +58,12 @@ namespace GPIOWebAPI
         valuePumpFloorHeat = 0;
         // Open the solenoid for the master ensuite floor heat
         GPIOArray.gpioArray[GPIOArray.SOLENOID_MASTER_ENSUITE].Value = 0;
-        GPIOArray.gpioArray[GPIOArray.SOLENOID_BRETT_BATHROOM].Value = 0;
       }
       // No heat needed for the master ensuite
       else
       {
         // Close the solenoid for the master ensuite floor heat
         GPIOArray.gpioArray[GPIOArray.SOLENOID_MASTER_ENSUITE].Value = 1;
-        GPIOArray.gpioArray[GPIOArray.SOLENOID_BRETT_BATHROOM].Value = 1;
       }
 
       // Basement thermostat is calling for heat
