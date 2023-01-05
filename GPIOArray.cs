@@ -22,6 +22,7 @@ namespace GPIOWebAPI
         public const int SOLENOID_BRETT_BATHROOM = 11;
         public const int SOLENOID_KATE_RAD = 12;
         public const int SOLENOID_MEDIA_ROOM_RAD = 13;
+        public const int BOILER = 14;
 
     public static bool EMULATOR = false;
 
@@ -42,8 +43,8 @@ namespace GPIOWebAPI
 
             gpioArray = new GPIO[]
                 {
-                    new GPIO(PUMP_HW_TANK + 1, 13, "Pump HW Tank", PinMode.Output, 1),
-                    new GPIO(PUMP_RADS + 1, 21, "Pump Rads", PinMode.Output, 1),
+                    new GPIO(PUMP_HW_TANK + 1, 21, "Pump HW Tank", PinMode.Output, 1),
+                    new GPIO(PUMP_RADS + 1, 13, "Pump Rads", PinMode.Output, 1),
                     new GPIO(PUMP_FLOOR_HEAT + 1, 26, "Pump Floor Heat", PinMode.Output, 1),
                     new GPIO(PUMP_ENSUITE_RETURN + 1, 27, "Pump Ensuite Return", PinMode.Output, 1),
                     new GPIO(THERMOSTAT_MASTER_ENSUITE + 1, 24, "Thermostat Master Ensuite", PinMode.InputPullUp, 0),
@@ -55,7 +56,8 @@ namespace GPIOWebAPI
                     new GPIO(SOLENOID_BASEMENT_HALLWAY + 1, 11, "Solenoid Basement Hallway", PinMode.Output, 1),
                     new GPIO(SOLENOID_BRETT_BATHROOM + 1, 7, "Solenoid Brett Bathroom", PinMode.Output, 1),
                     new GPIO(SOLENOID_KATE_RAD + 1, 8, "Solenoid Kate Rad", PinMode.Output, 1),
-                    new GPIO(SOLENOID_MEDIA_ROOM_RAD + 1, 6, "Solenoid Media Room Rad", PinMode.Output, 1)
+                    new GPIO(SOLENOID_MEDIA_ROOM_RAD + 1, 6, "Solenoid Media Room Rad", PinMode.Output, 1),
+                    new GPIO(BOILER + 1, 4, "Boiler", PinMode.Output, 1)
                 };
         }
     }

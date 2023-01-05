@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="heatingcontrol.js?v=2"></script>
+    <script src="gpiocontrol.js"></script>
 </head>
 <body>
 
@@ -34,11 +34,28 @@
       </div><!--/.container-fluid -->
     </nav>
 
+    <h2>Outputs</h2>
+    <p><button id="1" type="button" class="btn-gpio">Pump HW Tank</button></p>
+    <p><button id="2" type="button" class="btn-gpio">Pump Rads</button></p>
+    <p><button id="3" type="button" class="btn-gpio">Pump Floor Heat</button></p>
+    <p><button id="4" type="button" class="btn-gpio">Pump Ensuite Return</button></p>
+    <p><button id="7" type="button" class="btn-gpio">Solenoid Master Ensuite</button></p>
+    <p><button id="8" type="button" class="btn-gpio">Solenoid Kate Bathroom</button></p>
+    <p><button id="9" type="button" class="btn-gpio">Solenoid Basement Bathroom</button></p>
+    <p><button id="10" type="button" class="btn-gpio">Solenoid Basement Office</button></p>
+    <p><button id="11" type="button" class="btn-gpio">Solenoid Basement Hallway</button></p>
+    <p><button id="12" type="button" class="btn-gpio">Solenoid Brett Bathroom</button></p>
+    <p><button id="13" type="button" class="btn-gpio">Solenoid Kate Rad</button></p>
+    <p><button id="14" type="button" class="btn-gpio">Solenoid Media Room Rad</button></p>
+    <p><button id="15" type="button" class="btn-gpio">Boiler</button></p>
+
     <h2>Heating</h2>
-    <p><button id="7" type="button" class="btn-heating">Brett Bathroom</button></p>
-    <p><button id="4" type="button" class="btn-heating">Kate Bathroom</button></p>
-    <p><button id="3" type="button" class="btn-heating">Kate Bedroom</button></p>
-    <p><button id="5" type="button" class="btn-heating">Media Room</button></p>
-    <a href="/service.html">Service Menu</a>
+    <p><button id="0" type="button" class="btn-heating-enabled">Heating Enabled</button></p>
+    <p></p>
+
+    <h2>Inputs</h2>
+    <p>Thermostat Master Ensuite</p>
+    <p>Thermostat Basement</p>
+    <a href="/">Main Menu</a>
 </body>
 </html>

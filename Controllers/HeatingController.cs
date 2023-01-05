@@ -40,5 +40,29 @@ namespace GPIOWebAPI.Controllers
             HeatingArray.heatingArray[id - 1].Enabled = false;
             return HeatingArray.heatingArray[id - 1];
         }
-    }
+
+        // GET: api/Heating/enable
+        [HttpGet("/enable", Name = "HeatingEnable")]
+        public bool HeatingEnable()
+        {
+            return (HeatingArray.heatingEnabled);
+        }
+
+        // GET: api/Heating/enable/on
+        [HttpGet("/enable/on", Name = "HeatingEnableOn")]
+        public bool HeatingEnableOn()
+        {
+            HeatingArray.heatingEnabled = true;
+            return (true);
+        }
+
+        // GET: api/Heating/enable/off
+        [HttpGet("/enable/off", Name = "HeatingEnableOff")]
+        public bool HeatingEnableOff()
+        {
+            HeatingArray.heatingEnabled = false;
+            return (false);
+        }
+
+  }
 }
